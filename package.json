@@ -1,0 +1,19 @@
+{
+  "name": "softcom-interview-background-service",
+  "version": "1.0.0",
+  "description": "Service that handles all the background operations in the service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mogbeyi-david/softcom-interview-background-service.git"
+  },
+  "author": "David Mogbeyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mogbeyi-david/softcom-interview-background-service/issues"
+  },
+  "homepage": "https://github.com/mogbeyi-david/softcom-interview-background-service#readme"
+}
