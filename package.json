@@ -18,7 +18,10 @@
   "homepage": "https://github.com/mogbeyi-david/softcom-interview-background-service#readme",
   "dependencies": {
     "amqplib": "^0.5.5",
+    "app-root-path": "^2.2.1",
     "concurrently": "^5.0.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.7.7",
+    "winston": "^3.2.1"
   }
 }
