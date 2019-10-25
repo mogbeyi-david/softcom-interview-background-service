@@ -7,6 +7,7 @@ const connectionString = require("../../config/rabbitmq/connection");
 const open = require('amqplib').connect(connectionString);
 const queue = process.env.NOTIFY_SUBSCRIBERS_TO_QUESTION_QUEUE;
 const SubscriptionRepository = require("../../repositories/SubscriptionRepository");
+const rabbitMqService = require("../../services/rabbitmq");
 console.log(`Waiting for data in`, queue);
 
 open.then(function (conn) {
@@ -20,7 +21,7 @@ open.then(function (conn) {
                     let question = messageObject.question;
                     question = mongoose.Types.ObjectId(question);
                     const subscribers = await SubscriptionRepository.getAllForQuestion(question);
-                    console.log("Subscribers", subscribers);
+                    rabbitMqService.publish("mailer", subscribers);
                 } catch (e) {
                     console.log(`An error occurred while consuming ${queue}`, e)
                 }
