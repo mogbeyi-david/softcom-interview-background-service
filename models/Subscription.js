@@ -1,2 +1,4 @@
 const mongoose = require("mongoose");
-module.exports = mongoose.model("Subscription");
+const Schema = mongoose.Schema;
+const subscriptionSchema = new Schema({});
+module.exports = mongoose.model("Subscription", subscriptionSchema);
