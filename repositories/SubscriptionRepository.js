@@ -29,13 +29,27 @@ class SubscriptionRepository {
                 }
             },
             {
+                $lookup: {
+                    from: 'questions',
+                    localField: 'question',
+                    foreignField: '_id',
+                    as: 'question'
+                }
+            },
+            {
                 $unwind: {
                     path: "$user"
                 }
             },
             {
+                $unwind: {
+                    path: "$question"
+                }
+            },
+            {
                 $project: {
                     "user.email": true,
+                    "question.question": true,
                     "_id": false
                 }
             }
