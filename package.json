@@ -4,7 +4,7 @@
   "description": "Service that handles all the background operations in the service",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently 'node consumers/subscriptions/notify-question-answered.js'"
+    "start": "concurrently 'node consumers/subscriptions/notify-question-answered.js' 'node consumers/mailer.js'"
   },
   "repository": {
     "type": "git",
