@@ -7,7 +7,6 @@ const sendMail = require("../utility/send-mail");
 const open = require('amqplib').connect(connectionString);
 const queue = process.env.MAILER_QUEUE;
 console.log(`Waiting for data in`, queue);
-
 open.then(function (conn) {
     return conn.createChannel();
 }).then(function (ch) {
@@ -16,6 +15,7 @@ open.then(function (conn) {
             if (message !== null) {
                 try {
                     const messages = JSON.parse(message.content.toString());
+                    console.log("Messages", messages);
                     for (let message of messages) {
                         await sendMail(message)
                     }
