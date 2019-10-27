@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const constructResetPasswordEmail = (email) => {
-    const link = `${process.env.APP_URL}/api/v1/users/reset-password?${email}`;
+    const link = `${process.env.APP_URL}/api-docs/#/Users/reset-password`;
     return [{
         from: process.env.APP_EMAIL,
         to: email,
