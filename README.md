@@ -57,12 +57,16 @@ This codebase has the following directories:
 - Utility - Functions used often in codebase and tests
 
 
+
+
 # Consumers
 ## Consumers
 
 ### Run the consumers
 
 Consumers are the subscribers to data published in RabbitMQ.
+![RabbitMQ Management](https://i.ibb.co/Pmz2G1t/Screenshot-2019-10-27-at-11-59-42-PM.png)
+
 Sample consumer
 
 ```js
